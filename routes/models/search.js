@@ -5,21 +5,13 @@ module.exports = (router, fs)=>{
     var result = JSON.parse(data);
     var order = req.body;
     var ress = new Array();
-    if(order.category[1] == null){
+    console.log(order.category().length())
+    console.log(typeof(order.category())
+    for(var i=0;;i++){
+      if(order.category[i] == null) break;
       for(var j=0;j<40;j++){
-        if(result[j].minPrice < order.maxPrice + order.pm && result[j].minPrice > order.minPrice - order.pm && result[j].category == order.category){
-          console.log(order.category[1])
+        if(result[j].minPrice < order.maxPrice + order.pm && result[j].minPrice > order.minPrice - order.pm && result[j].category == order.category[i]){
           ress = ress.concat(result[j]);
-        }
-      }
-    }
-    else{
-      for(var i=0;;i++){
-        if(order.category[i] == null) break;
-        for(var j=0;j<40;j++){
-          if(result[j].minPrice < order.maxPrice + order.pm && result[j].minPrice > order.minPrice - order.pm && result[j].category == order.category[i]){
-            ress = ress.concat(result[j]);
-          }
         }
       }
     }
