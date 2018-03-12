@@ -5,7 +5,7 @@ module.exports = (router, fs)=>{
     var result = JSON.parse(data);
     var order = req.body;
     var ress = new Array();
-    if(typeof(order.category) != []){
+    if(order.category[1] == null){
       for(var j=0;j<40;j++){
         if(result[j].minPrice < order.maxPrice + order.pm && result[j].minPrice > order.minPrice - order.pm && result[j].category == order.category){
           ress = ress.concat(result[j]);
