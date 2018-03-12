@@ -5,8 +5,8 @@ module.exports = (router, fs)=>{
     var result = JSON.parse(data);
     var order = req.body;
     var ress = new Array();
-    console.log(order.category().length())
-    console.log(typeof(order.category()))
+    console.log(order.category.length())
+    console.log(typeof(order.category)
     for(var i=0;;i++){
       if(order.category[i] == null) break;
       for(var j=0;j<40;j++){
