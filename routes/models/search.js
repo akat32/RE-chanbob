@@ -25,7 +25,7 @@ module.exports = (router, fs)=>{
     if(ress[0] == null)
       res.status(404).json({message : "Hos not found!"})
     else
-      res.status(200).json(ress);
+      res.status(200).json({result : ress});
     console.log(order.category);
   })
   return router;
