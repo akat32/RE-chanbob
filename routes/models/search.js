@@ -8,6 +8,7 @@ module.exports = (router, fs)=>{
     if(order.category[1] == null){
       for(var j=0;j<40;j++){
         if(result[j].minPrice < order.maxPrice + order.pm && result[j].minPrice > order.minPrice - order.pm && result[j].category == order.category){
+          console.log(order.category[1])
           ress = ress.concat(result[j]);
         }
       }
